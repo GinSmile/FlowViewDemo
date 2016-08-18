@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.ginsmile.flowviewdemo.MainActivity">
+
+    <com.ginsmile.flowviewdemo.FlowView
+        android:id="@+id/fv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:circle_raidus="5dp"
+        app:line_height="3dp"
+        app:done_color="@color/colorAccent"
+        app:todo_color="@color/colorGrey"
+        app:padding_circle="1dp"
+        />
+
+    <Button
+        android:id="@+id/forward_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="前进一步"
+        android:layout_below="@id/fv"
+        ></Button>
+
+    <Button
+        android:id="@+id/backword_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="后退一步"
+        android:layout_toRightOf="@id/forward_btn"
+        android:layout_below="@id/fv"
+        ></Button>
+
+    <Button
+        android:id="@+id/reset_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重置"
+        android:layout_toRightOf="@id/backword_btn"
+        android:layout_below="@id/fv"
+        ></Button>
+
+
+</RelativeLayout>
