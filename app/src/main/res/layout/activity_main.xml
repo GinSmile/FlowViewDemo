@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.ginsmile.flowviewdemo.MainActivity">
 
@@ -53,8 +51,25 @@
         ></Button>
 
     <com.ginsmile.flowviewdemo.FlowView
-        android:id="@+id/fv2"
+        android:id="@+id/fv1"
         android:layout_below="@id/forward_btn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:circle_raidus="3dp"
+        app:circle_padding="0dp"
+        app:line_height="1dp"
+        app:done_color="@color/colorAccent"
+        app:todo_color="@color/colorGrey"
+        app:text_size="10pt"
+        app:text_padding="5dp"
+        app:is_has_start_end_line="true"
+        app:flow_nums="4"
+        app:done_nums="2"
+        />
+
+    <com.ginsmile.flowviewdemo.FlowView
+        android:id="@+id/fv2"
+        android:layout_below="@id/fv1"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:circle_raidus="5dp"
