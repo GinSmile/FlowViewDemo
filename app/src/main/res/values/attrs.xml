@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="FlowView">
-        <attr name="nums" format="integer" />
+        <attr name="flow_nums" format="integer" />
+        <attr name="done_nums" format="integer" />
+        <attr name="is_has_start_end_line" format="boolean" />
         <attr name="line_height" format="dimension"></attr>
         <attr name="circle_raidus" format="dimension"></attr>
         <attr name="todo_color" format="color"></attr>
         <attr name="done_color" format="color"></attr>
-        <attr name="padding_circle" format="dimension"></attr>
+        <attr name="circle_padding" format="dimension"></attr>
+        <attr name="text_size" format="dimension" />
+        <attr name="text_padding" format="dimension" />
 
     </declare-styleable>
 </resources>

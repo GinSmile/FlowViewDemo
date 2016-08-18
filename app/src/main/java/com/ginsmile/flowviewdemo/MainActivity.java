@@ -22,11 +22,8 @@ public class MainActivity extends AppCompatActivity {
         mLabels.add("three");
         mLabels.add("four");
         mLabels.add("five");
-        mLabels.add("six");
         final FlowView fv = (FlowView)findViewById(R.id.fv);
-        fv.setmLabels(mLabels);
-        fv.setmDoneNums(3);
-        fv.invalidate();
+        fv.setLabels(mLabels);
 
         Button btn1 = (Button)findViewById(R.id.forward_btn);
         btn1.setOnClickListener(new View.OnClickListener() {

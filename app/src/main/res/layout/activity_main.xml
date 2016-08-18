@@ -15,17 +15,22 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         app:circle_raidus="5dp"
+        app:circle_padding="5dp"
         app:line_height="3dp"
         app:done_color="@color/colorAccent"
         app:todo_color="@color/colorGrey"
-        app:padding_circle="1dp"
+        app:text_size="10pt"
+        app:text_padding="5dp"
+        app:is_has_start_end_line="true"
+        app:flow_nums="4"
+        app:done_nums="2"
         />
 
     <Button
         android:id="@+id/forward_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="前进一步"
+        android:text="forward"
         android:layout_below="@id/fv"
         ></Button>
 
@@ -33,7 +38,7 @@
         android:id="@+id/backword_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="后退一步"
+        android:text="backward"
         android:layout_toRightOf="@id/forward_btn"
         android:layout_below="@id/fv"
         ></Button>
@@ -42,10 +47,62 @@
         android:id="@+id/reset_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="重置"
+        android:text="reset"
         android:layout_toRightOf="@id/backword_btn"
         android:layout_below="@id/fv"
         ></Button>
+
+    <com.ginsmile.flowviewdemo.FlowView
+        android:id="@+id/fv2"
+        android:layout_below="@id/forward_btn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:circle_raidus="5dp"
+        app:circle_padding="0dp"
+        app:line_height="2dp"
+        app:done_color="@color/colorAccent"
+        app:todo_color="@color/colorGrey"
+        app:text_size="10pt"
+        app:text_padding="5dp"
+        app:is_has_start_end_line="false"
+        app:flow_nums="4"
+        app:done_nums="2"
+        />
+
+
+    <com.ginsmile.flowviewdemo.FlowView
+        android:id="@+id/fv3"
+        android:layout_below="@id/fv2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:circle_raidus="8dp"
+        app:circle_padding="3dp"
+        app:line_height="2dp"
+        app:done_color="@color/colorPrimary"
+        app:todo_color="@color/colorGrey"
+        app:text_size="6pt"
+        app:text_padding="5dp"
+        app:is_has_start_end_line="false"
+        app:flow_nums="4"
+        app:done_nums="3"
+        />
+
+    <com.ginsmile.flowviewdemo.FlowView
+        android:id="@+id/fv4"
+        android:layout_below="@id/fv3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:circle_raidus="8dp"
+        app:circle_padding="3dp"
+        app:line_height="2dp"
+        app:done_color="@color/colorPrimary"
+        app:todo_color="@color/colorGrey"
+        app:text_size="6pt"
+        app:text_padding="5dp"
+        app:is_has_start_end_line="false"
+        app:flow_nums="4"
+        app:done_nums="3"
+        />
 
 
 </RelativeLayout>
