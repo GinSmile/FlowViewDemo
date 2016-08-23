@@ -110,7 +110,7 @@ public class FlowView extends View {
         mDonePaintColor = ta.getColor(R.styleable.FlowView_done_color, Color.BLACK);
         mTodoPaintColor = ta.getColor(R.styleable.FlowView_todo_color, Color.GRAY);
 
-        mTextPadding = ta.getDimension(R.styleable.FlowView_text_padding, 50);
+        mTextPadding = ta.getDimension(R.styleable.FlowView_text_padding, 10);
         mTextSize = ta.getDimension(R.styleable.FlowView_text_size, 30);
 
         mDoneNums = ta.getInt(R.styleable.FlowView_done_nums, 3);
@@ -136,7 +136,7 @@ public class FlowView extends View {
             width = Math.min(width, MeasureSpec.getSize(widthMeasureSpec));
         }
 
-        int height = 50;
+        int height =(int)(mTextPadding + 2 * mPaddingCircle + 2 * mRadius + mTextSize);
         if (MeasureSpec.EXACTLY == MeasureSpec.getMode(heightMeasureSpec)) {
             height = MeasureSpec.getSize(heightMeasureSpec);
         }else{
@@ -151,11 +151,11 @@ public class FlowView extends View {
     public void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        mCenterY = 0.5f * getHeight();//画到view的中央
+        mCenterY = getHeight() - Math.max(mRadius, mLineHeight/2);//画到view的最下面
         mLeftX = 0;
         mLeftY = mCenterY - (mLineHeight / 2);//最左边的点的位置
         mRightX = getWidth() - mRadius;
-        mRightY = (float) (0.5f * getHeight() + 0.5 * mLineHeight);//最右边的位置
+        mRightY = (float) (getHeight() - Math.max(mRadius, mLineHeight/2) + 0.5 * mLineHeight);//最右边的位置
 
         //如果要画两端的线段，那么需要画的线就有 mFlowNums + 1 条
         if(is_has_start_end_line){
@@ -172,7 +172,7 @@ public class FlowView extends View {
             if(labels.size() > 0){
                 //为了防止显示不全，选择第一个字副串的像素长度和圆圈半径中最大的，作为第一个圆心的X坐标
                 //开始的点mLeftX，结束的点mRightX
-                mDonePaint.setTextSize(mTextSize);
+                mDonePaint.setTextSize(mTextSize);//因为首先会调用onSiezChange()，然后才会调用onDraw，所以要在这里确定字大小。
                 float textSize0 = mDonePaint.measureText(labels.get(0));//获取label0的字符总长度，像素
                 Log.v("tag",""+textSize0 + labels.get(0));
                 mLeftX = Math.max(textSize0/2, mRadius);//最开始的x坐标是：第一个字副串的像素长度，和圆圈半径中最大的
@@ -193,8 +193,8 @@ public class FlowView extends View {
     }
 
     /**
-    * 画开始处和结束处的线段
-    */
+     * 画开始处和结束处的线段
+     */
     private void drawSELine(Canvas canvas){
         //最左边的线段
         float firstEndX = 0;
