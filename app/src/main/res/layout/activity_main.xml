@@ -11,7 +11,7 @@
     <com.ginsmile.flowviewdemo.FlowView
         android:id="@+id/fv"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         app:circle_raidus="5dp"
         app:circle_padding="5dp"
         app:line_height="3dp"
@@ -54,7 +54,8 @@
         android:id="@+id/fv1"
         android:layout_below="@id/forward_btn"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         app:circle_raidus="3dp"
         app:circle_padding="0dp"
         app:line_height="1dp"
@@ -71,7 +72,8 @@
         android:id="@+id/fv2"
         android:layout_below="@id/fv1"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         app:circle_raidus="5dp"
         app:circle_padding="0dp"
         app:line_height="2dp"
@@ -84,12 +86,12 @@
         app:done_nums="2"
         />
 
-
     <com.ginsmile.flowviewdemo.FlowView
         android:id="@+id/fv3"
         android:layout_below="@id/fv2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         app:circle_raidus="8dp"
         app:circle_padding="3dp"
         app:line_height="2dp"
@@ -101,23 +103,5 @@
         app:flow_nums="4"
         app:done_nums="3"
         />
-
-    <com.ginsmile.flowviewdemo.FlowView
-        android:id="@+id/fv4"
-        android:layout_below="@id/fv3"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:circle_raidus="8dp"
-        app:circle_padding="3dp"
-        app:line_height="2dp"
-        app:done_color="@color/colorPrimary"
-        app:todo_color="@color/colorGrey"
-        app:text_size="6pt"
-        app:text_padding="5dp"
-        app:is_has_start_end_line="false"
-        app:flow_nums="4"
-        app:done_nums="3"
-        />
-
 
 </RelativeLayout>
